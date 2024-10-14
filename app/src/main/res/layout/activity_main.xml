@@ -1,750 +1,1158 @@
-<LinearLayout
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/main"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:gravity="center"
-    android:background="#87CEEB">
-
+    android:background="#ADD8E6" 
+    tools:context=".MainActivity">
 
     <!-- Título del juego -->
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Batalla Naval"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:text="BATALLA NAVAL"
+        android:textSize="40sp"
         android:textColor="#FFFFFF"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:paddingBottom="16dp"
-        android:layout_marginTop="20dp"/>
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tableLayout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="24dp"
+        android:gravity="center"/>
 
-    <!-- GridLayout que contendrá el tablero -->
-    <GridLayout
-        android:id="@+id/gridLayout"
+    <!-- TableLayout para el tablero -->
+    <TableLayout
+        android:id="@+id/tableLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:columnCount="11"
-        android:rowCount="11">
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
 
-        <!-- Esquina vacía superior izquierda -->
-        <TextView
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:background="#87CEEB"/> <!-- Fondo azul claro -->
+        <!-- Fila de encabezado -->
+        <TableRow>
+            <TextView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="#ADD8E6"/> <!-- Esquina vacía -->
 
-        <!-- Números en la primera fila -->
-        <TextView
-            android:text="1"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:gravity="center"
-            android:textColor="#FFFFFF"
-            android:background="#87CEEB"/> <!-- Fondo azul claro -->
-        <TextView
-            android:text="2"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:gravity="center"
-            android:textColor="#FFFFFF"
-            android:background="#87CEEB"/>
-        <TextView
-            android:text="3"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:gravity="center"
-            android:textColor="#FFFFFF"
-            android:background="#87CEEB"/>
-        <TextView
-            android:text="4"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:gravity="center"
-            android:textColor="#FFFFFF"
-            android:background="#87CEEB"/>
-        <TextView
-            android:text="5"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:gravity="center"
-            android:textColor="#FFFFFF"
-            android:background="#87CEEB"/>
-        <TextView
-            android:text="6"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:gravity="center"
-            android:textColor="#FFFFFF"
-            android:background="#87CEEB"/>
-        <TextView
-            android:text="7"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:gravity="center"
-            android:textColor="#FFFFFF"
-            android:background="#87CEEB"/>
-        <TextView
-            android:text="8"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:gravity="center"
-            android:textColor="#FFFFFF"
-            android:background="#87CEEB"/>
-        <TextView
-            android:text="9"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:gravity="center"
-            android:textColor="#FFFFFF"
-            android:background="#87CEEB"/>
-        <TextView
-            android:text="10"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:gravity="center"
-            android:textColor="#FFFFFF"
-            android:background="#87CEEB"/>
+            <TextView
+                android:text="1"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:background="#ADD8E6"/>
+            <TextView
+                android:text="2"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:background="#ADD8E6"/>
+            <TextView
+                android:text="3"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:background="#ADD8E6"/>
+            <TextView
+                android:text="4"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:background="#ADD8E6"/>
+            <TextView
+                android:text="5"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:background="#ADD8E6"/>
+            <TextView
+                android:text="6"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:background="#ADD8E6"/>
+            <TextView
+                android:text="7"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:background="#ADD8E6"/>
+            <TextView
+                android:text="8"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:background="#ADD8E6"/>
+            <TextView
+                android:text="9"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:background="#ADD8E6"/>
+            <TextView
+                android:text="10"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:background="#ADD8E6"/>
+        </TableRow>
 
-        <!-- Primera columna: Letras A-J -->
-        <TextView
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:background="#87CEEB"
-            android:gravity="center"
-            android:text="A"
-            android:textColor="#FFFFFF" />
-        
-        <!-- Fila A, botones de la fila -->
-        <Button
-            android:layout_width="24dp"
-            android:layout_height="25dp"
-            android:background="#1E90FF"
-            android:text="-"
-            android:textColor="#FFFFFF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
+        <!-- Fila A -->
+        <TableRow>
+            <TextView
+                android:text="A"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:background="#ADD8E6"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
 
-        <!-- Repite el mismo patrón para las letras B a J -->
+            <Button
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="-"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
 
-        <!-- Letra B -->
-        <TextView
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:background="#87CEEB"
-            android:gravity="center"
-            android:text="B"
-            android:textColor="#FFFFFF" />
-        <!-- Fila B, botones de la fila -->
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-       <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-            
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-            
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-            
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-                <!-- Letra C -->
-        <TextView
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:background="#87CEEB"
-            android:gravity="center"
-            android:text="C"
-            android:textColor="#FFFFFF" />
-        <!-- Fila C, botones de la fila -->
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
+            <Button
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="-"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+        </TableRow>
 
-        <!-- Letra D -->
-        <TextView
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:background="#87CEEB"
-            android:gravity="center"
-            android:text="D"
-            android:textColor="#FFFFFF" />
-        <!-- Fila D, botones de la fila -->
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
+        <!-- Fila B -->
+        <TableRow>
+            <TextView
+                android:text="B"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:background="#ADD8E6"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
 
-        <!-- Letra E -->
-        <TextView
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:background="#87CEEB"
-            android:gravity="center"
-            android:text="E"
-            android:textColor="#FFFFFF" />
-        <!-- Fila E, botones de la fila -->
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
+            <Button
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="-"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
 
-        <!-- Letra F -->
-        <TextView
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:background="#87CEEB"
-            android:gravity="center"
-            android:text="F"
-            android:textColor="#FFFFFF" />
-        <!-- Fila F, botones de la fila -->
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-            
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
+            <Button
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="-"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
 
-        <!-- Letra G -->
-        <TextView
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:background="#87CEEB"
-            android:gravity="center"
-            android:text="G"
-            android:textColor="#FFFFFF" />
-        <!-- Fila G, botones de la fila -->
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
+            <Button
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="-"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+        </TableRow>
 
-        <!-- Letra H -->
-        <TextView
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:background="#87CEEB"
-            android:gravity="center"
-            android:text="H"
-            android:textColor="#FFFFFF" />
-        <!-- Fila H, botones de la fila -->
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        
-        <!-- Letra J -->
-        <TextView
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:background="#87CEEB"
-            android:gravity="center"
-            android:text="J"
-            android:textColor="#FFFFFF" />
-        <!-- Fila J, botones de la fila -->
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
-        <Button
-            android:text="-"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:textColor="#FFFFFF"
-            android:background="#1E90FF" />
+        <!-- Fila C -->
+        <TableRow>
+            <TextView
+                android:text="C"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:background="#ADD8E6"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
 
-    </GridLayout>
-</LinearLayout>
+            <Button
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="-"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="-"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="-"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+        </TableRow>
+
+        <!-- Fila D -->
+        <TableRow>
+            <TextView
+                android:text="D"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:background="#ADD8E6"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <Button
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="-"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="-"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="-"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+        </TableRow>
+
+        <!-- Fila E -->
+        <TableRow>
+            <TextView
+                android:text="E"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:background="#ADD8E6"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <Button
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="-"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="-"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="-"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+        </TableRow>
+
+        <!-- Fila F -->
+        <TableRow>
+            <TextView
+                android:text="F"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:background="#ADD8E6"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <Button
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="-"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="-"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="-"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+        </TableRow>
+
+        <!-- Fila G -->
+        <TableRow>
+            <TextView
+                android:text="G"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:background="#ADD8E6"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <Button
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="-"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="-"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="-"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+        </TableRow>
+
+        <!-- Fila H -->
+        <TableRow>
+            <TextView
+                android:text="H"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:background="#ADD8E6"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <Button
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="-"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="-"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="-"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+        </TableRow>
+
+        <!-- Fila I -->
+        <TableRow>
+            <TextView
+                android:text="I"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:background="#ADD8E6"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <Button
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="-"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="-"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="-"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="-"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+        </TableRow>
+
+        <!-- Fila J -->
+        <TableRow>
+            <TextView
+                android:text="J"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:background="#ADD8E6"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+            <Button
+                android:text="-"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <Button
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="-"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="-"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="-"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:backgroundTint="#1E90FF"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="-"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+        </TableRow>
+    </TableLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 
